@@ -1,6 +1,7 @@
 def counting_the_vovel(sentence):
     sentence = sentence.lower()
     character_count = [str(a) for a in str(sentence)]
+    # nw wnt wrk = 'n' 'w' ' ' ...
 
     vovelcount = 0
     for singlechar in character_count:
