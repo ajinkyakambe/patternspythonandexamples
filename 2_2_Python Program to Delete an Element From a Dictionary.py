@@ -5,4 +5,4 @@ def delete_an_element(element):
     del my_dict[element]
     print(my_dict)
 
-delete_an_element(11)
+delete_an_element(13)

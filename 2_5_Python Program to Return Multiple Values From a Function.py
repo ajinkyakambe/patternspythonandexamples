@@ -5,8 +5,13 @@ def example_multiple_return():
     value2 = "second object returned"
     return value1, value2
 
-# Driving code
 
+# Driving code
 value1,value2 = example_multiple_return()
 print(value1)
 print(value2)
+
+
+# object
+# dict
+# tuples
