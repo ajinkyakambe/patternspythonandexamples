@@ -15,11 +15,21 @@ class snake_and_ladder:
     def __init__(self):
         print(self.player_name + ": Starting the game at position:", self.player_position)
 
+    def playGame(self):
+
+        # UC2: The Player rolls the die
+        # to get a number between 1 and 6
+        # . - Use ((RANDOM)) to get the number
+
+        die_rolling = random.randint(1, 6)
+        print("Die after rolling:", die_rolling)
+
 
 
 
 # driving code
 snakeladder = snake_and_ladder()
+snakeladder.playGame()
 
 
 
