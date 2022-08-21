@@ -15,12 +15,12 @@ class snake_and_ladder:
     def __init__(self):
         print(self.player_name + ": Starting the game at position:", self.player_position)
 
-    def playGame(self):
+    def play_game_in_steps(self):
 
         # UC2: The Player rolls the die
         # to get a number between 1 and 6
         # . - Use ((RANDOM)) to get the number
-
+        print("======================================")
         die_rolling = random.randint(1, 6)
         print("Die after rolling:", die_rolling)
 
@@ -34,6 +34,7 @@ class snake_and_ladder:
 
         check_position_move = random.randint(1, 3)
         print("We have to select the move no", check_position_move)
+
         if check_position_move == 1:
             print("No play")
             print(self.player_name + ": Current player position at:", self.player_position)
@@ -41,21 +42,31 @@ class snake_and_ladder:
         elif check_position_move == 2:
             print("Using Ladder for moving postion by ", die_rolling)
             self.player_position += die_rolling
-            print(self.player_name + ": Current player position at:", self.player_position)
+            print(self.player_name + ": Current player position after ladder at:", self.player_position)
         else:
             print("Move the position below because of snake", die_rolling)
             if self.player_position - die_rolling < 0:
                 self.player_position = 0
             else:
                 self.player_position = self.player_position - die_rolling
-            print(self.player_name + ": Current player position at:", self.player_position)
+            print(self.player_name + ": Current player position after snake at:", self.player_position)
+        print("======================================")
 
+    def playGame(self):
 
+        # UC 4 Repeat till the Player
+        # reaches the winning
+        # position 100. - Note In case the player position moves
+        # below 0, then the player restarts from 0
+
+        while self.player_position < 100:
+            self.play_game_in_steps()
+
+        print("Game ended")
 
 
 # driving code
 snakeladder = snake_and_ladder()
 snakeladder.playGame()
-
 
 
