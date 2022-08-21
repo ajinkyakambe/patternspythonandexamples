@@ -24,6 +24,32 @@ class snake_and_ladder:
         die_rolling = random.randint(1, 6)
         print("Die after rolling:", die_rolling)
 
+        # UC3: The Player then checks for an Option.
+        # They are No Play, Ladder or Snake.
+        # - Use ((RANDOM)) to check for Options - In Case of No Play the player stays in the same position
+        # - In Case of Ladder the player moves ahead by the
+        # number of position received in the die
+        #
+        # - In Case of Snake the player moves behind
+
+        check_position_move = random.randint(1, 3)
+        print("We have to select the move no", check_position_move)
+        if check_position_move == 1:
+            print("No play")
+            print(self.player_name + ": Current player position at:", self.player_position)
+
+        elif check_position_move == 2:
+            print("Using Ladder for moving postion by ", die_rolling)
+            self.player_position += die_rolling
+            print(self.player_name + ": Current player position at:", self.player_position)
+        else:
+            print("Move the position below because of snake", die_rolling)
+            if self.player_position - die_rolling < 0:
+                self.player_position = 0
+            else:
+                self.player_position = self.player_position - die_rolling
+            print(self.player_name + ": Current player position at:", self.player_position)
+
 
 
 
