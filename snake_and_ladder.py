@@ -41,7 +41,10 @@ class snake_and_ladder:
 
         elif check_position_move == 2:
             print("Using Ladder for moving postion by ", die_rolling)
-            self.player_position += die_rolling
+            if self.player_position + die_rolling > 100:
+                print("No move played because going above 100")
+            else:
+                self.player_position += die_rolling
             print(self.player_name + ": Current player position after ladder at:", self.player_position)
         else:
             print("Move the position below because of snake", die_rolling)
