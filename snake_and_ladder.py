@@ -10,6 +10,7 @@ class snake_and_ladder:
     # initial player details
     player_position = 0
     player_name = "Player 1"
+    no_of_times_die_rolled = 0
 
     # initial position of the player
     def __init__(self):
@@ -17,12 +18,20 @@ class snake_and_ladder:
 
     def play_game_in_steps(self):
 
+        # UC 6 Report the number of
+        # times the dice was
+        # played to win the game
+        # and also the position
+        # after every die role
+
+
         # UC2: The Player rolls the die
         # to get a number between 1 and 6
         # . - Use ((RANDOM)) to get the number
         print("======================================")
         die_rolling = random.randint(1, 6)
         print("Die after rolling:", die_rolling)
+        self.no_of_times_die_rolled += 1
 
         # UC3: The Player then checks for an Option.
         # They are No Play, Ladder or Snake.
@@ -64,8 +73,8 @@ class snake_and_ladder:
 
         while self.player_position < 100:
             self.play_game_in_steps()
-
         print("Game ended")
+        print("No of times die rolled to play game", self.no_of_times_die_rolled)
 
 
 # driving code
